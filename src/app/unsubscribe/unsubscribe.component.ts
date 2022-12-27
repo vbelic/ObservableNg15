@@ -29,7 +29,9 @@ export class UnsubscribeComponent implements OnInit {
 
   clearContainer = () => {
     const el = document.getElementById('consolelog');
-    while (el?.firstChild) el.removeChild(el.firstChild);
+    while (el?.firstChild) {
+      el.removeChild(el.firstChild);
+    }
   }
 
   checkSubs(){

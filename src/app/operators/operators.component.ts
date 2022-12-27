@@ -13,7 +13,7 @@ export class OperatorsComponent implements OnInit, OnDestroy {
   @ViewChild(MatRipple)
   ripple!: MatRipple;
 
-  serachInput: string="";
+  serachInput: string = "";
   radius: number = 40;
 
   mergeMapSubscription: Subscription = new Subscription();

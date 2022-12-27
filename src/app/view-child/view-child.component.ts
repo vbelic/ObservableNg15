@@ -1,11 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-view-child',
   templateUrl: './view-child.component.html',
   styleUrls: ['./view-child.component.css']
 })
-export class ViewChildComponent implements OnInit {
+export class ViewChildComponent implements OnInit, AfterViewInit {
 
   /*
 ************************** ViewChild TESTING CHANGES ***************************************
@@ -38,7 +38,9 @@ export class ViewChildComponent implements OnInit {
 
   clearContainer = () => {
     const el = document.getElementById('consolelog');
-    while (el?.firstChild) el.removeChild(el.firstChild);
+    while (el?.firstChild) {
+      el.removeChild(el.firstChild);
+    }
   }
 
   ngOnInit(): void {

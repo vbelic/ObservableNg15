@@ -15,6 +15,9 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        "curly": 1,
+        "arrow-body-style": ["error", "always"],
+        "object-curly-newline": ["error", { "multiline": true }],
         "@angular-eslint/directive-selector": [
           "error",
           {

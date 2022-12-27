@@ -4,6 +4,8 @@
 1) Install VS Extension `ESLint`
 2) Run in command prompt `ng lint` and install eslint/schematics, edit .eslintrc.json
 3) Check code with command `ng lint` or `npm run lint`
+4) rules find at `https://eslint.org/docs/latest/rules`
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
