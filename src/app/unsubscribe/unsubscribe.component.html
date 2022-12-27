@@ -1,0 +1,22 @@
+<pre>
+Primjer obaveznog unsubscribe() <b>Subscription</b> odnosno observable subsription-a.
+</pre>
+
+<!-- <div fxFill fxLayout="column" fxLayoutAlign="center start">
+    <div fxFill fxLayout="column" fxLayoutAlign="space-around start">
+        <button pButton type="button" style="margin: 10px;" label="Subscribe All" (click)="subscribe()"></button>
+        <mat-spinner diameter="20" color="warn" *ngIf="subscriptionsActive"  ></mat-spinner>
+    </div>
+    <div>
+        <button pButton type="button" style="margin: 10px;" label="Unsusbcibe" (click)="unsubscribe()" [disabled]="!subscriptionsActive"></button>
+    </div>
+</div> -->
+
+<div>
+    <button pButton type="button" style="margin: 10px;" label="Subscribe All" (click)="subscribe()"></button>
+    <mat-spinner diameter="20" color="warn" *ngIf="subscriptionsActive" ></mat-spinner>
+
+    <button pButton type="button" style="margin: 10px;" label="Unsusbcibe" (click)="unsubscribe()" [disabled]="!subscriptionsActive"></button>
+</div>
+
+<div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 400px; overflow-y: scroll;"></div>

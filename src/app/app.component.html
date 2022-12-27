@@ -1,0 +1,41 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+  <div *ngIf="option !== 'deactivate'" fxFlex="20">
+    <mat-radio-group [(ngModel)]="option" fxLayout="column" fxLayoutAlign="center start">
+      <mat-radio-button value="basic-creation">Basic Creation</mat-radio-button>
+      <mat-radio-button value="operators">Operators</mat-radio-button>
+      <mat-radio-button value="async">Templates / Async</mat-radio-button>
+      <mat-radio-button value="errorhan">Error Handling</mat-radio-button>
+      <mat-radio-button value="drag">Drag Drop</mat-radio-button>
+      <mat-radio-button value="child">ViewChild issue</mat-radio-button>
+      <mat-radio-button value="uns">Unsubscribe</mat-radio-button>
+      <mat-radio-button value="switch">Async event i rxjs operator (async filtering)</mat-radio-button>
+      <mat-radio-button value="accordion">Observable accordion</mat-radio-button>
+      <mat-radio-button value="modelobserver">Model observer</mat-radio-button>
+      <mat-radio-button value="constant">Korištenje HTML constant</mat-radio-button>
+      <mat-radio-button value="subject">Subject, BehaviorSubject, ReplaySubject, AsyncSubject</mat-radio-button>
+      <mat-radio-button value="multiple">Merge multiple observables</mat-radio-button>
+      <mat-radio-button value="deactivate">Deactivate route</mat-radio-button>
+    </mat-radio-group> 
+  </div>
+  <div fxFlex="70" fxLayout="Column" fxLayoutAlign="start start" fxFill>
+    <ng-container [ngSwitch]="option">
+      <app-basic-creation *ngSwitchCase="'basic-creation'" fxFill></app-basic-creation>
+      <app-operators *ngSwitchCase="'operators'" fxFill></app-operators>
+      <app-async *ngSwitchCase="'async'" fxFill></app-async>
+      <app-error-handling *ngSwitchCase="'errorhan'" fxFill></app-error-handling>
+      <app-drag-and-drop *ngSwitchCase="'drag'" fxFill></app-drag-and-drop>
+      <app-view-child *ngSwitchCase="'child'" fxFill></app-view-child>
+      <app-unsubscribe *ngSwitchCase="'uns'" fxFill></app-unsubscribe>
+      <app-switch-merge *ngSwitchCase="'switch'" fxFill ></app-switch-merge>
+      <app-observable-child *ngSwitchCase="'accordion'" fxFill ></app-observable-child>
+      <app-model-observer *ngSwitchCase="'modelobserver'" fxFill ></app-model-observer>
+      <app-constant *ngSwitchCase="'constant'"></app-constant>
+      <app-subject *ngSwitchCase="'subject'"></app-subject>
+      <app-multiple *ngSwitchCase="'multiple'"></app-multiple>
+      <app-deactivate-show *ngSwitchCase="'deactivate'"></app-deactivate-show>
+    </ng-container>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

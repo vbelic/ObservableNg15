@@ -1,0 +1,35 @@
+<pre style="margin-left: -25px">
+    An <b>Observable</b> is a collection of multiple input values that get processed using array methods such as map, reduce, filter, and so on.
+    It comes in handy when handling asynchronous operations such as making HTTP requests, user-input events, and so on.
+
+    An RxJS <b>Subject</b> is a special type of Observable that allows values to be multicasted to many Observers.
+    While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.
+
+    <b>BehaviorSubject</b> is a variant of a Subject which has a notion of the current value that it stores and emits to all new subscriptions.
+    This current value is either the item most recently emitted by the source observable or a seed/default value if none has yet been emitted.
+
+    <b>ReplaySubject</b> is a variant of a Subject which keeps a cache of previous values emitted by a source observable and
+    sends them to all new observers immediately on subscription.
+    This behavior of replaying a sequence of old values to new subscribes is where the name for this type of a subject comes from.
+
+    <b>AsyncSubject</b> is a variant of a Subject which keeps the last value emitted by a source observable before completion and sends it to all new subscriptions.
+
+    A <b>Subscription</b> is an object that represents a disposable resource, usually the execution of an Observable.
+    A Subscription has one important method, unsubscribe, that takes no argument and just disposes the resource held by the subscription.
+
+    <u>Note</u>
+    An observable can send three types of notifications: <b>next</b>, <b>error</b>, <b>complete</b>.
+    <ul style="margin-top: -30px">
+        <li style="margin-top: -10px"><b>next</b> notification sends a value such as a Number, a String, an Object, etc.</li>
+        <li style="margin-top: -30px"><b>error</b> notification sends a JavaScript Error or exception.</li>
+        <li style="margin-top: -30px"><b>complete</b> notification does not send a value.</li>
+    </ul>
+    <p style="margin-top: -70px; margin-left: -35px">
+        And in subscribe() method we provide three callbacks to receive these three types of notifications.
+        Order of the callbacks matter, they correspond to <b>next</b>, <b>error</b>, and <b>complete</b> in order.
+    </p>
+</pre>
+
+<button pButton type="button" style="margin-left: auto;" label="Subject, BehaviorSubject, ReplaySubject" (click)="test()"></button>
+
+<div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 400px; overflow-y: scroll;"></div>

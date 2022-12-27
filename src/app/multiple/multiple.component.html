@@ -1,0 +1,10 @@
+<pre>
+Merge multiple <b>observables</b>.
+</pre>
+
+<button pButton type="button" style="margin: 10px;" label="Refresh" (click)="mergeAgain()"></button>
+
+<ng-container *ngIf="(obs$ | async) as data; else loading">
+    <pre>{{data | json}}</pre>
+</ng-container>
+<ng-template #loading> Loading... </ng-template>

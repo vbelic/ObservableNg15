@@ -1,0 +1,19 @@
+<pre>
+Ispravan način korištenja <b>*ngIf</b> na strani HTML-a. Nije povezano sa observable-om.
+</pre>
+
+<button pButton type="button" style="margin: 10px;" label="TYPE 1" (click)="selectedEnumeratedType = EnumeratedTypes.TYPE1"></button>
+<button pButton type="button" style="margin: 10px;" label="TYPE 2" (click)="selectedEnumeratedType = EnumeratedTypes.TYPE2"></button>
+<button pButton type="button" style="margin: 10px;" label="TYPE 3" (click)="selectedEnumeratedType = EnumeratedTypes.TYPE3"></button>
+
+<div *ngIf="selectedEnumeratedType === EnumeratedTypes.TYPE1">
+    SELECTED TYPE1
+</div>
+
+<div *ngIf="selectedEnumeratedType === EnumeratedTypes.TYPE2">
+    SELECTED TYPE2
+</div>
+
+<div *ngIf="selectedEnumeratedType === EnumeratedTypes.TYPE3">
+    SELECTED TYPE3
+</div>

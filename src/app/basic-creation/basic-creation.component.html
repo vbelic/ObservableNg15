@@ -1,0 +1,25 @@
+<pre>
+ Osnovni <b>Observable</b> objekti (event, interval, timer ...), korištenje i dispose.
+ 
+ You <b>complete</b> an <b>Observable</b>, and <b>unsubscribe</b> a <b>Subscription</b>.
+ These are two different methods on two different objects.
+ You subscribe to an observable which returns a Subscription object.
+
+ If you want to stop listening to emits from the Observable you call <b>subscription.unsubscribe()</b>.
+
+ If you want an <b>Observable</b> to be done with his task, you call <b>observable.complete()</b>.
+ (this only exists on Subject and those who extend Subject).
+ The <b>complete</b> method in itself will also <b>unsubscribe</b> any possible subscriptions.
+</pre>
+
+<!-- <div fxFill fxLayout="column" fxLayoutAlign="center start"> -->
+    <button mat-button color="primary" (click)="observableCreate()">Create / Observable</button>
+    <button mat-button color="primary" (click)="fromClick()">From</button>
+    <button mat-button color="primary" (click)="ofClick()">of</button>
+    <button mat-button color="primary" (click)="intervalClick()">interval</button>
+    <button mat-button color="primary" (click)="timmerClick()">timer</button>
+    <button mat-button color="primary" (click)="uncubsClick()">Unsubscribe</button>
+    <button mat-button color="primary" (click)="fromEventClick()">Form Event</button>
+<!-- </div> -->
+
+<div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 400px; overflow-y: scroll;"></div>

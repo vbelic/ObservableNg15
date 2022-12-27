@@ -1,0 +1,30 @@
+<pre>
+HTML <b>Observable</b> async pipe i primjer korištenja dinamičkog <b>filtering-a</b>.
+Obavezno unesite <b>numeričku</b> vrijednost (1...6) ili <b>space</b> za dohvat svih vrijednosti.
+</pre>
+
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div>
+        <mat-form-field fxfledx="100" style="margin: 0px;">
+            <mat-label>Traži ...</mat-label>
+            <input #serachby matInput placeholder="Unesite numeričku vrijednost ili <space>" autocomplete="off" [(ngModel)]="searchInput" style="height: 40px">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-list>
+            <ng-container *ngIf="peoople | async as data">
+               <pre>{{ data | json }}</pre>
+            </ng-container>
+        </mat-list>
+
+
+        <mat-list>
+            <!-- <mat-list-item *ngFor="let p of peoople | async">
+                <h3 matLine>{{p.firstName}},{{p.lastName}}</h3>
+                <p matLine>{{p.email}}</p>
+                <p matLine>{{p.city}}</p>
+                <p matLine>{{p.country}}</p>
+            </mat-list-item> -->
+        </mat-list>
+    </div>
+</div>

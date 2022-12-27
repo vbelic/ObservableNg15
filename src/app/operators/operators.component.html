@@ -1,0 +1,36 @@
+<pre>
+   <b>Observable</b> objekti i korištenje <b>RxJs operatora</b> za kontrolu flow-a.
+</pre>
+
+<!-- <div fxFill fxLayout="column" fxLayoutAlign="center start"> -->
+    <button mat-button color="primary" (click)="mapClick()">Map</button>
+    <button mat-button color="primary" (click)="mergeMapClick()">Merge Map</button>
+    <button mat-button color="primary" (click)="filterClick()">Filter</button>
+    <button mat-button color="primary" (click)="tapClick()">Tap</button>
+    <button mat-button color="primary" (click)="takeClick()">Take</button>
+    <button mat-button color="primary" (click)="debonceTimeClick()">Debounce Time</button>
+    <button mat-button color="primary" (click)="tapClick()">Tap</button>
+    <button mat-button color="primary" (click)="debonceTimeSearchClick()">Debounce Time Seach</button>
+    <button mat-button color="primary" (click)="takeWhileClick()">Take While</button>
+    <button mat-button color="primary" (click)="takeUntilClick()">Take Until</button>
+<!-- </div>  -->
+
+<div class="debounce-area" #matriple matRipple  matRippleColor="blue" [matRippleRadius]="radius">
+
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-form-field>
+    <mat-label>Search by: </mat-label>
+    <input matInput
+    style="height: 40px"
+    placeholder="Type"
+    autocomplete="off"
+    (keyup)="search($event)"
+    [(ngModel)]="serachInput"
+    >
+
+</mat-form-field>
+
+<div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 400px; overflow-y: scroll;"></div>

@@ -1,0 +1,37 @@
+<pre>
+HTML <b>Observable</b> async pipe and using <b>complete</b>.
+</pre>
+
+<div fxFill fxLayout="column" fxLayoutAlign="center start">
+    <mat-card>
+        <mat-card-title>Select Option</mat-card-title>
+        <mat-card-content>
+            <mat-selection-list>
+                <mat-list-option *ngFor="let o of options | async">{{o}}</mat-list-option>
+            </mat-selection-list>
+        </mat-card-content>
+        <mat-card-actions>
+           <!-- o ? if it exists it will be shown -->
+           <!--various subs
+            <div *ngIf="user|async; else loadinguser">
+                
+                <p>Name: {{(user|async)?.name}}</p>
+                <p>Login: {{(user|async)?.login}}</p>
+            </div>
+            <ng-template #loadinguser> 
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </ng-template>-->
+
+            <!-- ONLY ONE SUBSCRIBE -->
+            <div *ngIf="user | async as usrs; else loadinguser">
+                <p>Name: {{usrs.name}}</p>
+                <p>Login: {{usrs.login}}</p>
+            </div>
+            <ng-template #loadinguser> 
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </ng-template>
+        </mat-card-actions>
+        
+    </mat-card>
+
+</div>
