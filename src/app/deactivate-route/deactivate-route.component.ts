@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   providers: [],
 })
 export class DeactivateRouteComponent implements OnInit, OnDestroy {
-  isModelValid: boolean = false;
+  isModelValid = false;
 
   constructor(
     private router: Router,

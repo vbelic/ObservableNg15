@@ -51,6 +51,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -76,6 +77,8 @@ import { ModelObserverComponent } from './model-observer/model-observer.componen
 import { ConstantComponent } from './constant/constant.component';
 import { SubjectComponent } from './subject/subject.component';
 import { MultipleComponent } from './multiple/multiple.component';
+import { LookupCacheComponent } from './lookup-cache/lookup-cache.component';
+import { DataStorageService } from './lookup-cache/services/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -99,6 +102,7 @@ import { MultipleComponent } from './multiple/multiple.component';
     ConstantComponent,
     SubjectComponent,
     MultipleComponent,
+    LookupCacheComponent,
   ],
   imports: [
     BrowserModule,
@@ -149,12 +153,21 @@ import { MultipleComponent } from './multiple/multiple.component';
     ProgressSpinnerModule,
     ButtonModule,
     InputTextModule,
+    DropdownModule,
 
     FlexLayoutModule,
 
     HttpClientModule 
   ],
-  providers: [HttpClientModule, ConfirmationService, MessageService, ObservableChildControlService, CanDeactivateGuard],
+  providers: [
+    HttpClientModule,
+    ConfirmationService,
+    MessageService,
+    ObservableChildControlService,
+    CanDeactivateGuard,
+    DataStorageService,
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
