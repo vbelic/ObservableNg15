@@ -15,6 +15,7 @@
       <mat-radio-button value="subject">Subject, BehaviorSubject, ReplaySubject, AsyncSubject</mat-radio-button>
       <mat-radio-button value="multiple">Merge multiple observables</mat-radio-button>
       <mat-radio-button value="lookup">Lookup cache</mat-radio-button>
+      <mat-radio-button value="style">Style observer</mat-radio-button>
       <mat-radio-button value="deactivate">Deactivate route</mat-radio-button>
     </mat-radio-group> 
   </div>
@@ -34,6 +35,7 @@
       <app-subject *ngSwitchCase="'subject'"></app-subject>
       <app-multiple *ngSwitchCase="'multiple'"></app-multiple>
       <app-lookup-cache *ngSwitchCase="'lookup'"></app-lookup-cache>
+      <app-style-observer *ngSwitchCase="'style'"></app-style-observer>
       <app-deactivate-show *ngSwitchCase="'deactivate'"></app-deactivate-show>
     </ng-container>
   </div>

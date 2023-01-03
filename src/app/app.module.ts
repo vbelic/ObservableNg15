@@ -79,6 +79,7 @@ import { SubjectComponent } from './subject/subject.component';
 import { MultipleComponent } from './multiple/multiple.component';
 import { LookupCacheComponent } from './lookup-cache/lookup-cache.component';
 import { DataStorageService } from './lookup-cache/services/data-storage.service';
+import { StyleObserverComponent } from './style-observer/style-observer.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { DataStorageService } from './lookup-cache/services/data-storage.service
     SubjectComponent,
     MultipleComponent,
     LookupCacheComponent,
+    StyleObserverComponent,
   ],
   imports: [
     BrowserModule,

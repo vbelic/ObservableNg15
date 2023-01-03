@@ -1,0 +1,10 @@
+<pre style="margin-bottom: 40px;;">
+ Observable za detekciju izmjene <b>style</b> (ili class) unutar html-a, npr:
+ &lt;div id="corps" style="display: block;"&gt;&lt;/div&gt;
+ style display je izmjenjen.
+</pre>
+
+<div id="corps" style="display: block;">EVENT CHANGE STYLE DISPLAY!!!!!!</div>
+<button pButton type="button" style="margin: 10px;" label="Change div style" (click)="changeDivStyle()"></button>
+
+<div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 450px; overflow-y: scroll;"></div>
