@@ -52,6 +52,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
+import { TableModule } from 'primeng/table';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -156,6 +157,7 @@ import { StyleObserverComponent } from './style-observer/style-observer.componen
     ButtonModule,
     InputTextModule,
     DropdownModule,
+    TableModule,
 
     FlexLayoutModule,
 

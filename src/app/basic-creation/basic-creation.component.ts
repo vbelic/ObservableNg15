@@ -48,11 +48,14 @@ export class BasicCreationComponent implements OnInit {
   fromClick() {
     this.clearContainer();
 
+    const webApiResult = [1, 2, 3, 4, 5, { x: 10, y: 20 }];
     //Pass item by item giving next to each item
-    from([1, 2, 3, 4, 5, { x: 10, y: 20 }]).subscribe((v) => console.log(v));
+    from(webApiResult).subscribe((v) => console.log(v));
     //can be given subscribes both directly and subsequently
     const source = from([1, 2, 3, 4, 5, { x: 10, y: 20 }]);
-    this.subscription.add(source.subscribe((v) => /* console.log(v) */ this.logToContainer(JSON.stringify(v))));
+    this.subscription.add(source.subscribe((v) => /* console.log(v) */ {
+      return this.logToContainer(JSON.stringify(v));
+    }));
   }
 
   ofClick() {

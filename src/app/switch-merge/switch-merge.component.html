@@ -1,30 +1,51 @@
 <pre>
 HTML <b>Observable</b> async pipe i primjer korištenja dinamičkog <b>filtering-a</b>.
-Obavezno unesite <b>numeričku</b> vrijednost (1...6) ili <b>space</b> za dohvat svih vrijednosti.
+Obavezno unesite <b>numeričku</b> vrijednost (1...12) ili <b>space</b> za dohvat svih vrijednosti.
+
+Ukoliko za filter unesemo non-numeric vrijednost - producirati ćemo <b style="color:red">HttpErrorResponse</b> i komponenta postaje invalidna (ne izvršava se kod).
 </pre>
 
 <div fxLayout="column" fxLayoutAlign="start stretch">
     <div>
-        <mat-form-field fxfledx="100" style="margin: 0px;">
+        <mat-form-field fxfledx="100" style="margin: 0px; width: 50%;">
             <mat-label>Traži ...</mat-label>
-            <input #serachby matInput placeholder="Unesite numeričku vrijednost ili <space>" autocomplete="off" [(ngModel)]="searchInput" style="height: 40px">
+            <input #serachby matInput placeholder="Unesite numeričku vrijednost ili <space>" autocomplete="off"
+                [(ngModel)]="searchInput" style="height: 40px">
         </mat-form-field>
     </div>
     <div>
         <mat-list>
-            <ng-container *ngIf="peoople | async as data">
-               <pre>{{ data | json }}</pre>
+            <ng-container *ngIf="people$ | async as data">
+                <p-table [value]="data.data?.length > 0 ? data.data : [data.data]">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>Naziv</th>
+                            <th>Avatar</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-user>
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.first_name}} {{user.last_name}}</td>
+                            <td><img [src]="user.avatar"></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
             </ng-container>
         </mat-list>
 
 
-        <mat-list>
-            <!-- <mat-list-item *ngFor="let p of peoople | async">
+        <!-- <mat-list>
+            <mat-list-item *ngFor="let p of people$ | async">
                 <h3 matLine>{{p.firstName}},{{p.lastName}}</h3>
                 <p matLine>{{p.email}}</p>
                 <p matLine>{{p.city}}</p>
                 <p matLine>{{p.country}}</p>
-            </mat-list-item> -->
-        </mat-list>
+            </mat-list-item>
+        </mat-list> -->
     </div>
 </div>
