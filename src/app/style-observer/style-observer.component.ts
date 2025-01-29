@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-style-observer',
-  templateUrl: './style-observer.component.html',
-  styleUrls: ['./style-observer.component.scss']
+    selector: 'app-style-observer',
+    templateUrl: './style-observer.component.html',
+    styleUrls: ['./style-observer.component.scss'],
+    standalone: false
 })
 export class StyleObserverComponent implements OnInit, OnDestroy {
   observer: MutationObserver | null | undefined = null;

@@ -4,9 +4,10 @@ import { from, fromEvent, interval, Observable, Subject, Subscription, timer } f
 import { debounceTime, delay, filter, first, groupBy, last, map, mergeMap, reduce, take, takeUntil, takeWhile, tap, toArray } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-operators',
-  templateUrl: './operators.component.html',
-  styleUrls: ['./operators.component.css']
+    selector: 'app-operators',
+    templateUrl: './operators.component.html',
+    styleUrls: ['./operators.component.css'],
+    standalone: false
 })
 export class OperatorsComponent implements OnInit, OnDestroy {
 

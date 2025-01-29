@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-deactivate-show',
-  templateUrl: './deactivate-show.component.html',
+    selector: 'app-deactivate-show',
+    templateUrl: './deactivate-show.component.html',
+    standalone: false
 })
 export class DeactivateShowComponent implements OnInit, OnDestroy {
   constructor(

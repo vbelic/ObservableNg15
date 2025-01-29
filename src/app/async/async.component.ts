@@ -8,9 +8,10 @@ interface User{
 }
 
 @Component({
-  selector: 'app-async',
-  templateUrl: './async.component.html',
-  styleUrls: ['./async.component.css']
+    selector: 'app-async',
+    templateUrl: './async.component.html',
+    styleUrls: ['./async.component.css'],
+    standalone: false
 })
 export class AsyncComponent implements OnInit {
 

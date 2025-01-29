@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ObservableChildControlService } from './services/observable-child-control.service';
 
 @Component({
-  selector: 'app-observable-child',
-  templateUrl: './observable-child.component.html',
-  styleUrls: ['./observable-child.component.scss'],
-  providers: [ObservableChildControlService],
+    selector: 'app-observable-child',
+    templateUrl: './observable-child.component.html',
+    styleUrls: ['./observable-child.component.scss'],
+    providers: [ObservableChildControlService],
+    standalone: false
 })
 export class ObservableChildComponent {
   componenta$ = this.childControlService.componenta$;

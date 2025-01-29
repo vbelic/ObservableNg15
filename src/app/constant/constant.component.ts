@@ -8,10 +8,11 @@ export enum EnumeratedTypes {
 }
 
 @Component({
-  selector: 'app-constant',
-  templateUrl: './constant.component.html',
-  styleUrls: ['./constant.component.scss'],
-  providers: [],
+    selector: 'app-constant',
+    templateUrl: './constant.component.html',
+    styleUrls: ['./constant.component.scss'],
+    providers: [],
+    standalone: false
 })
 export class ConstantComponent implements OnInit, OnDestroy {
   EnumeratedTypes: typeof EnumeratedTypes = EnumeratedTypes;

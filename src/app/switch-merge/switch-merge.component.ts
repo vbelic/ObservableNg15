@@ -5,9 +5,10 @@ import { debounceTime, map, mergeAll, mergeMap, switchAll, switchMap } from 'rxj
 import { Person } from './person.model';
 
 @Component({
-  selector: 'app-switch-merge',
-  templateUrl: './switch-merge.component.html',
-  styleUrls: ['./switch-merge.component.css']
+    selector: 'app-switch-merge',
+    templateUrl: './switch-merge.component.html',
+    styleUrls: ['./switch-merge.component.css'],
+    standalone: false
 })
 export class SwitchMergeComponent implements OnInit {
   @ViewChild('serachby', { static: true }) el!: ElementRef;

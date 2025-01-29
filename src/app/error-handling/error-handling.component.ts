@@ -3,9 +3,10 @@ import { Observable, of, Subscription, throwError, timer } from 'rxjs';
 import { catchError, map, retry, retryWhen, tap, timeout } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-error-handling',
-  templateUrl: './error-handling.component.html',
-  styleUrls: ['./error-handling.component.css']
+    selector: 'app-error-handling',
+    templateUrl: './error-handling.component.html',
+    styleUrls: ['./error-handling.component.css'],
+    standalone: false
 })
 export class ErrorHandlingComponent implements OnInit, OnDestroy {
 

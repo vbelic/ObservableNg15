@@ -2,10 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-deactivate-route',
-  templateUrl: './deactivate-route.component.html',
-  styleUrls: ['./deactivate-route.component.scss'],
-  providers: [],
+    selector: 'app-deactivate-route',
+    templateUrl: './deactivate-route.component.html',
+    styleUrls: ['./deactivate-route.component.scss'],
+    providers: [],
+    standalone: false
 })
 export class DeactivateRouteComponent implements OnInit, OnDestroy {
   isModelValid = false;

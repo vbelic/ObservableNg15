@@ -4,10 +4,11 @@ import { BehaviorSubject, of, Subscription } from 'rxjs';
 import { ModelObserverModel } from './model-observer.model';
 
 @Component({
-  selector: 'app-model-observer',
-  templateUrl: './model-observer.component.html',
-  styleUrls: ['./model-observer.component.scss'],
-  providers: [],
+    selector: 'app-model-observer',
+    templateUrl: './model-observer.component.html',
+    styleUrls: ['./model-observer.component.scss'],
+    providers: [],
+    standalone: false
 })
 export class ModelObserverComponent implements OnInit, OnDestroy {
   public model: Array<ModelObserverModel> = new Array<ModelObserverModel>();

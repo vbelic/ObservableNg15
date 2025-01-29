@@ -4,10 +4,11 @@ import { LookupModel, Person } from './models/lookup.model';
 import { DataStorageService } from './services/data-storage.service';
 
 @Component({
-  selector: 'app-lookup-cache',
-  templateUrl: './lookup-cache.component.html',
-  styleUrls: ['./lookup-cache.component.scss'],
-  providers: [],
+    selector: 'app-lookup-cache',
+    templateUrl: './lookup-cache.component.html',
+    styleUrls: ['./lookup-cache.component.scss'],
+    providers: [],
+    standalone: false
 })
 
 export class LookupCacheComponent implements OnInit, OnDestroy {

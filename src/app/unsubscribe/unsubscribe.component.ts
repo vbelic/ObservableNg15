@@ -3,9 +3,10 @@ import { fromEvent, interval, Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-unsubscribe',
-  templateUrl: './unsubscribe.component.html',
-  styleUrls: ['./unsubscribe.component.css']
+    selector: 'app-unsubscribe',
+    templateUrl: './unsubscribe.component.html',
+    styleUrls: ['./unsubscribe.component.css'],
+    standalone: false
 })
 export class UnsubscribeComponent implements OnInit {
 

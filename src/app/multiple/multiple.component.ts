@@ -5,10 +5,11 @@ import { forkJoin, Observable, of, switchMap } from 'rxjs';
 import { Person } from '../switch-merge/person.model';
 
 @Component({
-  selector: 'app-multiple',
-  templateUrl: './multiple.component.html',
-  styleUrls: ['./multiple.component.scss'],
-  providers: [],
+    selector: 'app-multiple',
+    templateUrl: './multiple.component.html',
+    styleUrls: ['./multiple.component.scss'],
+    providers: [],
+    standalone: false
 })
 export class MultipleComponent implements OnInit, OnDestroy {
   obs$: Observable<any> = new Observable();

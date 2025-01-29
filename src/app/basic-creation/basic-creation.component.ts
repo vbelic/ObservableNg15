@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { from, fromEvent, interval, Observable, observable, Observer, of, Subscription, timer } from 'rxjs';
 
 @Component({
-  selector: 'app-basic-creation',
-  templateUrl: './basic-creation.component.html',
-  styleUrls: ['./basic-creation.component.css']
+    selector: 'app-basic-creation',
+    templateUrl: './basic-creation.component.html',
+    styleUrls: ['./basic-creation.component.css'],
+    standalone: false
 })
 export class BasicCreationComponent implements OnInit {
 

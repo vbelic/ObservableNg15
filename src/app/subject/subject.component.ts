@@ -7,6 +7,7 @@ import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
     templateUrl: './subject.component.html',
     styleUrls: ['./subject.component.scss'],
     providers: [],
+    standalone: false
 })
 export class SubjectComponent implements OnInit, OnDestroy {
 
