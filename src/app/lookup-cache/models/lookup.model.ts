@@ -18,11 +18,11 @@ export class Person {
 }
 
 export interface Unknown {
-    id: number;
-    name: string;
-    year:number;
-    color: string;
-    pantoneValue: string;
+    id: number | null;
+    name: string | null;
+    year:number | null;
+    color: string | null;
+    pantoneValue: string | null;
 }
 
 

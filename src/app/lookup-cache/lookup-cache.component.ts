@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { LookupModel, Person } from './models/lookup.model';
 import { DataStorageService } from './services/data-storage.service';
 
@@ -33,8 +33,13 @@ export class LookupCacheComponent implements OnInit, OnDestroy {
     }
   }
 
+  forceReload() {
+    this.dataStorageService.LookupsReload();
+  }
+
   ngOnInit() {
     this.users$ = this.dataStorageService.getFirstServiceLookups(['users']);
+    this.lookups = this.dataStorageService.lookups;
   }
 
   ngOnDestroy() { 

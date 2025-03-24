@@ -1,36 +1,39 @@
 <div style="width: 100%; font-weight: bold;">Lookup no cache</div>
 <ng-container *ngIf="users$ | async as users">
+
     <div class="p-field">
         <label class="col-2 class-item" for="users">Users </label>
         <p-dropdown class="col grey lighten-1" [options]="users.data" [(ngModel)]="selectedUser"
-            [style]="{ 'min-width':'300px' }" [filter]="true" filterBy="name" [showClear]="true"
+            [style]="{ 'min-width':'300px' }" [filter]="true" filterBy="first_name" [showClear]="true"
             placeholder="Select user">
             <ng-template pTemplate="selectedItem">
-                <h5>{{ selectedUser.first_name }} {{ selectedUser.last_name }}</h5>
+                <h5>{{ selectedUser?.first_name }} {{ selectedUser?.last_name }}</h5>
             </ng-template>
             <ng-template let-user pTemplate="item">
-                <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+                <h5>{{ user?.first_name }} {{ user?.last_name }}</h5>
             </ng-template>
         </p-dropdown>
+      
     </div>
+
 </ng-container>
 
 
 
 <div style="width: 100%; padding-top: 40px; font-weight: bold;">Lookup cache</div>
 
-<button pButton type="button" style="margin: 10px;" label="Force reload" (click)="dataStorageService.LookupsReload()"></button>
+<button pButton type="button" style="margin: 10px;" label="Force reload" (click)="forceReload()"></button>
 
 <div class="p-field">
     <label class="col-2 class-item-value" for="userscache">Users </label>
-    <p-dropdown class="col" [style]="{ 'min-width':'300px' }" id="userscache" [options]="lookups.users"
+    <p-dropdown *ngIf="lookups?.users" class="col" [style]="{ 'min-width':'300px' }" id="userscache" [options]="lookups.users"
         [(ngModel)]="selectedUser" placeholder="Select user" optionValue="id" optionLabel="name"
         [showClear]="false"></p-dropdown>
 </div>
 
 <div class="p-field" style="padding-top: 10px;">
     <label class="col-2 class-item-value" for="unknowncache">Colors </label>
-    <p-dropdown class="col" [style]="{ 'min-width':'300px' }" id="unknowncache" [options]="lookups.unknowns"
+    <p-dropdown *ngIf="lookups?.unknowns" class="col" [style]="{ 'min-width':'300px' }" id="unknowncache" [options]="lookups.unknowns"
         placeholder="Select color" optionValue="id" optionLabel="name"
         [showClear]="false"></p-dropdown>
 </div>

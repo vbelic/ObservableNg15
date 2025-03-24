@@ -82,7 +82,9 @@ import { LookupCacheComponent } from './lookup-cache/lookup-cache.component';
 import { DataStorageService } from './lookup-cache/services/data-storage.service';
 import { StyleObserverComponent } from './style-observer/style-observer.component';
 
-@NgModule({ declarations: [
+@NgModule(
+    {
+        declarations: [
         AppComponent,
         AsyncComponent,
         BasicCreationComponent,
@@ -164,5 +166,6 @@ import { StyleObserverComponent } from './style-observer/style-observer.componen
         CanDeactivateGuard,
         DataStorageService,
         provideHttpClient(withInterceptorsFromDi()),
-    ] })
+    ] 
+})
 export class AppModule { }

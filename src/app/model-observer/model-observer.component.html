@@ -7,7 +7,7 @@ Model Observer
 <!-- items -->
 <ng-template ngFor let-item [ngForOf]="model" let-i=index>
     <div style="padding: 5px" [ngClass]="{ 'bg-duplicate': item.isDuplicate }">
-        <p-inputNumber style="margin-right: 10px;" [(ngModel)]="item.id" (ngModelChange)="OnValueChanged(item)"></p-inputNumber>
+        <p-inputNumber [(ngModel)]="item.id" class="me-2" (ngModelChange)="OnValueChanged(item)"></p-inputNumber>
         <input style="margin-right: 10px;" type="text" pInputText [(ngModel)]="item.name" (ngModelChange)="OnValueChanged(item)" />
         <p-checkbox [(ngModel)]="item.isMandatory" [binary]="true" (onChange)="OnValueChanged(item)"></p-checkbox>
     </div>
