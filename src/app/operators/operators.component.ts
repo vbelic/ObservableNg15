@@ -232,7 +232,7 @@ export class OperatorsComponent implements OnInit, OnDestroy {
     .subscribe(
       (i)=> /* console.log('takeUntil: ',i) */ this.logToContainer('takeUntil ' + JSON.stringify(i)),
       (error)=> /* console.error(error) */  this.logToContainer(JSON.stringify(error)),
-      ()=> /* console.log("complete") */  this.logToContainer(JSON.stringify('complete'))
+      ()=> /* console.log("complete") */  this.logToContainer(JSON.stringify('complete my friend'))
     )
   }
 }

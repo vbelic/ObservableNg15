@@ -17,6 +17,7 @@
       <mat-radio-button value="lookup">Lookup cache</mat-radio-button>
       <mat-radio-button value="style">Style observer</mat-radio-button>
       <mat-radio-button value="deactivate">Deactivate route</mat-radio-button>
+      <mat-radio-button value="signal">Signals</mat-radio-button>
     </mat-radio-group> 
   </div>
   <div fxFlex="70" fxLayout="Column" fxLayoutAlign="start start" fxFill>
@@ -37,6 +38,7 @@
       <app-lookup-cache *ngSwitchCase="'lookup'"></app-lookup-cache>
       <app-style-observer *ngSwitchCase="'style'"></app-style-observer>
       <app-deactivate-show *ngSwitchCase="'deactivate'"></app-deactivate-show>
+      <app-signal *ngSwitchCase="'signal'"></app-signal>
     </ng-container>
   </div>
 </div>

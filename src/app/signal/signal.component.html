@@ -1,0 +1,28 @@
+    <div style="margin-top:50px !important; width: 100% !important"></div>
+    
+    <button (click)="increment()">Increment</button>
+    <p>Count: {{ count() }}</p>
+
+    <br />
+    <p>Computed {{fullName}}</p> 
+    <!-- <p>Function {{ functionFullName()}}</p> -->
+
+    <br />
+    <button (click)="addItem()">Add Item</button>
+    <p>getTotalPrice {{getTotalPrice()}}</p> 
+
+    <br />
+    <br />
+    <!-- BehaviorSubject -->
+    <p>
+        @if (idleTimeRemaining$ | async; as data) {
+            {{data}}
+        }
+    </p>
+     <!-- Signal -->
+    <p>
+        {{idleTimeRemaining()}}
+    </p>
+
+    <div id="consolelog" style="margin-left:auto; margin-right:auto; width:960px; height: 400px; overflow-y: scroll;"></div>
+    

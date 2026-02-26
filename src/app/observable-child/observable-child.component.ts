@@ -16,35 +16,35 @@ export class ObservableChildComponent {
   constructor(private childControlService: ObservableChildControlService) { }
   
   onTabClose(event: any) {
-    switch (event.index) {
-      case 0:
-        this.childControlService.closeComponentA();
-        break;
-      case 1:
-        this.childControlService.closeComponentB();
-        break;
-      case 2:
-        this.childControlService.closeComponentC();
-        break;
-      default:
-        break;
-    }
+    // switch (event.index) {
+    //   case 0:
+    //     this.childControlService.closeComponentA();
+    //     break;
+    //   case 1:
+    //     this.childControlService.closeComponentB();
+    //     break;
+    //   case 2:
+    //     this.childControlService.closeComponentC();
+    //     break;
+    //   default:
+    //     break;
+    // }
   }
   
   onTabOpen(event: any) {
 
-      switch (event.index) {
-        case 0:
-          this.childControlService.openComponentA();
-          break;
-        case 1:
-          this.childControlService.openComponentB();
-          break;
-        case 2:
-          this.childControlService.openComponentC();
-          break;
-        default:
-          break;
-      }
+      // switch (event.index) {
+      //   case 0:
+      //     this.childControlService.openComponentA();
+      //     break;
+      //   case 1:
+      //     this.childControlService.openComponentB();
+      //     break;
+      //   case 2:
+      //     this.childControlService.openComponentC();
+      //     break;
+      //   default:
+      //     break;
+      // }
   }
 }

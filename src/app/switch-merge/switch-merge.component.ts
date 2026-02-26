@@ -1,7 +1,7 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { from, fromEvent, Observable, of, throwError } from 'rxjs';
-import { debounceTime, map, mergeAll, mergeMap, switchAll, switchMap } from 'rxjs/operators';
+import { debounceTime, finalize, map, mergeAll, mergeMap, switchAll, switchMap, take, tap } from 'rxjs/operators';
 import { Person } from './person.model';
 
 @Component({
@@ -21,16 +21,28 @@ export class SwitchMergeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-   // this.firstOption();
-   // this.secondOption();
+   //// this.firstOption();
+   //// this.secondOption();
    this.thirdOption();
+  }
+
+  getHTTPHeaders(): HttpHeaders {
+    const result = new HttpHeaders()
+         .set('Content-Type', 'application/json')
+         .set('Accept', 'application/json')
+         .set('Accept-Language', `${"hr"}`)
+         .set('x-api-key', 'API_KEY');
+  
+    return result;
   }
 
   filterPeople(searchInput: string): Observable<any> {
     if (searchInput.length === 0) {
       return of([]);
     }
-    return this.http.get<any>(`${this.url}/${searchInput}`)
+
+    const httpHeaders = this.getHTTPHeaders();
+    return this.http.get<any>(`${this.url}/${searchInput}`, { headers: httpHeaders });
   }
 
   public getError(): Observable<any> {
@@ -42,12 +54,34 @@ export class SwitchMergeComponent implements OnInit {
   firstOption() {
     fromEvent(this.el.nativeElement, 'keyup')
       .subscribe(e => {
+
         this.filterPeople(this.searchInput)
-          .subscribe(r => {
-            //// console.log(r)
-            document.write(r.join());
-            document.write('<br>');
-          });
+          .pipe(take(1),
+            tap({
+              subscribe: () => null,
+              unsubscribe: () => null,
+              finalize: () => null
+            }),
+            finalize(() => {
+            }))
+          .subscribe({
+            // This will run when data is received,
+            next: (value: any) => {
+                //// document.write(value.join());
+                document.write('<br>');
+            },
+            complete: () => {
+            },
+            error: (error: any) => {    
+            },
+        });
+
+        // this.filterPeople(this.searchInput)
+        //   .subscribe(r => {
+        //     //// console.log(r)
+        //     document.write(r.join());
+        //     document.write('<br>');
+        //   });
       });
   }
 

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, Subject, Subscriber } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
@@ -80,13 +80,25 @@ export class DataStorageService {
         return this._lookups;
     }
 
+    getHTTPHeaders(): HttpHeaders {
+        const result = new HttpHeaders()
+             .set('Content-Type', 'application/json')
+             .set('Accept', 'application/json')
+             .set('Accept-Language', `${"hr"}`)
+             .set('x-api-key', 'API_KEY');
+      
+        return result;
+    }
+    
     getFirstServiceLookups(filter: Array<string>): Observable<Array<any>> {
         alert(`call ${this.urlUsers} service`);
-		return this.http.get<Array<any>>(`${this.urlUsers}?filter=${filter.join('&filter=')}`, { headers: {} });
+        const httpHeaders = this.getHTTPHeaders();
+		return this.http.get<Array<any>>(`${this.urlUsers}?filter=${filter.join('&filter=')}`, { headers: httpHeaders });
 	}
 
     getSecondServiceLookups(filter: Array<string>): Observable<Array<any>> {
         alert(`call ${this.urlUnknowns} service`);
-		return this.http.get<Array<any>>(`${this.urlUnknowns}?filter=${filter.join('&filter=')}`, { headers: {} });
+        const httpHeaders = this.getHTTPHeaders();
+		return this.http.get<Array<any>>(`${this.urlUnknowns}?filter=${filter.join('&filter=')}`, { headers: httpHeaders });
 	}
 }

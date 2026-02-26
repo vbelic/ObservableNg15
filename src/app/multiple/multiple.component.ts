@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { forkJoin, Observable, of, switchMap } from 'rxjs';
+import { forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Person } from '../switch-merge/person.model';
 
 @Component({
@@ -24,6 +24,14 @@ export class MultipleComponent implements OnInit, OnDestroy {
           data2: this.getData2('2'),
           data3: this.getData3('3'),
         }))
+      );
+
+      this.getData1('1').pipe(
+        map((data) => {
+          this.getData2('2').subscribe((x) => {
+            const veky = x;
+          });
+        })
       );
   }
 

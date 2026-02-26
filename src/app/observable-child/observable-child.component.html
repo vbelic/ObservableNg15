@@ -5,13 +5,16 @@ Korištenje master <b>Observable</b> servisa za forsirani destroy nereferenciran
 <p-accordion #accordion (onClose)="onTabClose($event)" (onOpen)="onTabOpen($event)" class="p-m-2 p-px-4">
     <p-accordionTab header="Komponenta A" styleClass="100vh">
         <ng-template pTemplate="content">
-            <app-component-a *ngIf="componenta$ | async" class="p-mx-3" ></app-component-a>
+            <!-- <app-component-a *ngIf="componenta$ | async" class="p-mx-3"></app-component-a> -->
+            <app-component-a class="p-mx-3"></app-component-a>
         </ng-template>
     </p-accordionTab>
     <p-accordionTab header="Komponenta B">
-        <app-component-b *ngIf="componentb$ | async" class="p-mx-3" ></app-component-b>
+        <!-- <app-component-b *ngIf="componentb$ | async" class="p-mx-3"></app-component-b> -->
+        <app-component-b class="p-mx-3"></app-component-b>
     </p-accordionTab>
     <p-accordionTab header="Komponenta C">
-        <app-component-c *ngIf="componentc$ | async" class="p-mx-3" ></app-component-c>
+        <!-- <app-component-c *ngIf="componentc$ | async" class="p-mx-3"></app-component-c> -->
+        <app-component-c class="p-mx-3" ></app-component-c>
     </p-accordionTab>
 </p-accordion>

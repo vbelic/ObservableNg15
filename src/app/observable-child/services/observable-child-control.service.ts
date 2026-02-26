@@ -8,26 +8,26 @@ export class ObservableChildControlService {
   componentc$ = new BehaviorSubject<boolean>(false);
 
   openComponentA() {
-    this.componenta$.next(true);
+    //this.componenta$.next(true);
   }
 
   closeComponentA() {
-    this.componenta$.next(false);
+    //this.componenta$.next(false);
   }
 
   openComponentB() {
-    this.componentb$.next(true);
+    //this.componentb$.next(true);
   }
 
   closeComponentB() {
-    this.componentb$.next(false);
+    //this.componentb$.next(false);
   }
 
   openComponentC() {
-    this.componentc$.next(true);
+    //this.componentc$.next(true);
   }
 
   closeComponentC() {
-    this.componentc$.next(false);
+    //this.componentc$.next(false);
   }
 }

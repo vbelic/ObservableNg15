@@ -81,6 +81,7 @@ import { MultipleComponent } from './multiple/multiple.component';
 import { LookupCacheComponent } from './lookup-cache/lookup-cache.component';
 import { DataStorageService } from './lookup-cache/services/data-storage.service';
 import { StyleObserverComponent } from './style-observer/style-observer.component';
+import { SignalComponent } from './signal/signal.component';
 
 @NgModule(
     {
@@ -107,6 +108,7 @@ import { StyleObserverComponent } from './style-observer/style-observer.componen
         MultipleComponent,
         LookupCacheComponent,
         StyleObserverComponent,
+        SignalComponent
     ],
     bootstrap: [AppComponent], imports: [
         HttpClientModule,
